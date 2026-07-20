@@ -9,22 +9,40 @@ interface NavbarProps {
 export default function Navbar({ onQuoteClick }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Products", href: "#products" },
-    { label: "Network", href: "#network" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Process", href: "#trade-process" },
+    { label: "Our Products", href: "#products" },
+    { label: "Global Network", href: "#network" },
+    { label: "Why Choose Us", href: "#why-us" },
+    { label: "Trade Process", href: "#trade-process" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Simple, performant dynamic active section detection
+      const sections = navItems.map((item) => item.href.slice(1));
+      let currentSection = "home";
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 160) {
+            currentSection = section;
+          }
+        }
+      }
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on load to configure initial values
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -98,18 +116,25 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
             </a>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-1.5 p-1 rounded-full bg-[#0F172A]/80 border border-white/5 backdrop-blur-xl">
-              {navItems.map((item) => (
-                <a
-                  id={`nav-link-${item.label.toLowerCase().replace(" ", "-")}`}
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="font-sans text-[11px] font-medium tracking-wider text-zinc-400 hover:text-white transition-all duration-200 px-4 py-1.5 rounded-full hover:bg-white/5"
-                >
-                  {item.label}
-                </a>
-              ))}
+            <div className="hidden md:flex items-center space-x-1 p-1 rounded-full bg-[#0F172A]/85 border border-white/5 backdrop-blur-xl">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.slice(1);
+                return (
+                  <a
+                    id={`nav-link-${item.label.toLowerCase().replace(" ", "-")}`}
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={`font-sans text-[11px] font-medium tracking-wider transition-all duration-300 px-3.5 py-1.5 rounded-full ${
+                      isActive
+                        ? "bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+                        : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
             </div>
 
             {/* Desktop CTA Action Button */}
@@ -119,7 +144,7 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
                 onClick={onQuoteClick}
                 className="relative px-4 py-2 rounded-xl bg-white hover:bg-zinc-100 text-black font-sans text-xs font-semibold tracking-wide flex items-center gap-1.5 transition-all duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:scale-[1.02] cursor-pointer"
               >
-                Get Quote <ArrowRight className="w-3.5 h-3.5" />
+                Request a Quotation <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
 
@@ -149,17 +174,24 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
               className="md:hidden mt-2 mx-auto max-w-7xl"
             >
               <div className="glass-panel rounded-2xl px-5 py-6 space-y-3 shadow-2xl border-white/10 bg-zinc-950/95">
-                {navItems.map((item) => (
-                  <a
-                    id={`mobile-nav-${item.label.toLowerCase().replace(" ", "-")}`}
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="block font-sans text-xs font-medium tracking-wider text-zinc-400 hover:text-white transition-colors py-3 px-2 rounded-xl hover:bg-white/5"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                {navItems.map((item) => {
+                  const isActive = activeSection === item.href.slice(1);
+                  return (
+                    <a
+                      id={`mobile-nav-${item.label.toLowerCase().replace(" ", "-")}`}
+                      key={item.label}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`block font-sans text-xs font-medium tracking-wider transition-all duration-200 py-3 px-3 rounded-xl ${
+                        isActive
+                          ? "bg-white/10 text-white font-semibold border-l-2 border-blue-500 pl-4"
+                          : "text-zinc-400 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
                 <button
                   id="btn-mobile-quotation"
                   onClick={() => {
@@ -168,7 +200,7 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
                   }}
                   className="w-full mt-4 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black font-sans text-xs font-semibold tracking-wide text-center transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Get Quote <ArrowRight className="w-3.5 h-3.5" />
+                  Request a Quotation <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </motion.div>

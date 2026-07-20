@@ -1,46 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { Globe, Shield, Anchor, TrendingUp } from "lucide-react";
-
-function Counter({ value, duration = 1.5, suffix = "" }: { value: number; duration?: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(null);
-  const isInView = useInView(countRef, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let start = 0;
-    const end = value;
-    if (start === end) return;
-
-    const totalMilliseconds = duration * 1000;
-    const incrementTime = Math.max(Math.floor(totalMilliseconds / end), 8);
-    
-    const timer = setInterval(() => {
-      start += Math.ceil(end / (totalMilliseconds / incrementTime));
-      if (start >= end) {
-        clearInterval(timer);
-        setCount(end);
-      } else {
-        setCount(start);
-      }
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, [isInView, value, duration]);
-
-  return (
-    <span ref={countRef} className="text-4xl sm:text-5xl font-bold tracking-tight text-white font-sans">
-      {count}
-      {suffix}
-    </span>
-  );
-}
+import { Shield, Anchor } from "lucide-react";
 
 export default function About() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   return (
     <section id="about" className="py-32 sm:py-40 bg-[#050816] relative overflow-hidden" ref={containerRef}>
@@ -63,10 +27,6 @@ export default function About() {
                 className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out filter brightness-[0.8] contrast-[1.05]"
                 referrerPolicy="no-referrer"
               />
-            </div>
-            {/* Minimal floating coordinate label */}
-            <div className="absolute bottom-4 left-4 bg-black/75 backdrop-blur-md border border-white/5 px-3 py-1.5 rounded-lg text-[9px] font-mono tracking-widest text-zinc-400 uppercase">
-              Lat: 1.29027° N • Lon: 103.85195° E
             </div>
           </div>
 
@@ -100,10 +60,10 @@ export default function About() {
               className="space-y-6 text-zinc-400 text-sm sm:text-base font-light leading-relaxed"
             >
               <p>
-                <strong className="text-white font-medium">Jasmine Advisory Sdn Bhd</strong> is a high-volume international export facilitation and physical commodity trade execution house headquartered in Kuala Lumpur, Malaysia. 
+                <strong className="text-white font-medium">Jasmine Advisory Sdn Bhd</strong> is a professional export facilitation and physical commodity trade execution house headquartered in Kuala Lumpur, Malaysia. 
               </p>
               <p>
-                We coordinate heavy freight logistics, transshipments, and vessel chartering across key global trade lanes. Our direct partnerships with refinery desks, mining concessions, and agricultural state boards enable transaction routing without multi-tier broker margins.
+                We coordinate freight logistics, transshipments, and vessel operations across key global trade routes. Our direct networks with refineries, producers, and agricultural associations enable efficient trade facilitation without multi-tiered intermediary overheads.
               </p>
             </motion.div>
 
@@ -117,61 +77,24 @@ export default function About() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <Anchor className="w-4 h-4 text-blue-500" />
-                  <span className="text-xs font-bold text-white tracking-wider uppercase">Vessel Integrity</span>
+                  <span className="text-xs font-bold text-white tracking-wider uppercase">Logistics Security</span>
                 </div>
                 <p className="text-xs text-zinc-500 leading-normal font-light">
-                  Direct laycan slots and bulk chartering capability.
+                  Direct laycan coordination and secure vessel chartering.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <Shield className="w-4 h-4 text-cyan-500" />
-                  <span className="text-xs font-bold text-white tracking-wider uppercase">Frictionless Escrow</span>
+                  <span className="text-xs font-bold text-white tracking-wider uppercase">Structured Trade</span>
                 </div>
                 <p className="text-xs text-zinc-500 leading-normal font-light">
-                  Tier-1 documentary letter of credit verification.
+                  Documentary letter of credit and compliance validation.
                 </p>
               </div>
             </motion.div>
 
-          </div>
-
-        </div>
-
-        {/* Clean, Non-Dashboard Asymmetric Metrics Bar */}
-        <div className="mt-32 pt-16 border-t border-zinc-900/60 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-          
-          <div className="space-y-2 border-l border-zinc-900 pl-6">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.2em] block">Markets Sourced</span>
-            <div className="flex items-baseline">
-              <Counter value={35} suffix="+" />
-            </div>
-            <p className="text-xs text-zinc-500 font-light">Regions directly connected</p>
-          </div>
-
-          <div className="space-y-2 border-l border-zinc-900 pl-6">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.2em] block">Sought Spec Grades</span>
-            <div className="flex items-baseline">
-              <Counter value={45} suffix="+" />
-            </div>
-            <p className="text-xs text-zinc-500 font-light">Refined chemical logs registered</p>
-          </div>
-
-          <div className="space-y-2 border-l border-zinc-900 pl-6">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.2em] block">Active Cargo Vessels</span>
-            <div className="flex items-baseline">
-              <Counter value={120} suffix="+" />
-            </div>
-            <p className="text-xs text-zinc-500 font-light">Chartered logistics nodes</p>
-          </div>
-
-          <div className="space-y-2 border-l border-zinc-900 pl-6">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-[0.2em] block">Primary Hub Desks</span>
-            <div className="flex items-baseline">
-              <Counter value={8} />
-            </div>
-            <p className="text-xs text-zinc-500 font-light">Sovereign clearing points</p>
           </div>
 
         </div>

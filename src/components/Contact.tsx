@@ -118,10 +118,10 @@ export default function Contact({ selectedProduct }: ContactProps) {
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
-            Establish a supply line.
+            Request a Quotation.
           </h2>
           <p className="mt-4 text-zinc-400 text-sm font-light leading-relaxed">
-            Connect directly with our commodities routing team. We initiate escrow and verify legal parameters for all qualified institutional mandates.
+            Connect directly with our trade facilitation desk. We assist with quotation parameters, sourcing requests, and corporate paperwork for registered buyers.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
           <div className="lg:col-span-5 space-y-6">
             <div className="glass-panel p-8 rounded-[24px] border border-white/5 relative bg-zinc-950/40">
               <span className="font-mono text-[8px] tracking-[0.15em] text-zinc-500 block uppercase mb-6">
-                Institutional Outpost Location
+                Headquarters Location
               </span>
               
               <h3 className="text-xl font-bold text-white tracking-tight mb-8">
@@ -143,7 +143,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <MapPin className="w-4 h-4 text-zinc-600 shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">HQ Coordinates</span>
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">HQ Address</span>
                     <p className="leading-relaxed text-zinc-300">
                       Block G-2-5, Boulevard Business Park<br />
                       Off Jalan Kuching<br />
@@ -156,7 +156,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Phone className="w-4 h-4 text-zinc-600 shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">Direct Terminal Tel</span>
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">Direct Telephone</span>
                     <a href="tel:+60129819919" className="block font-mono text-white hover:text-blue-400 transition-colors font-semibold">
                       +60129819919
                     </a>
@@ -167,7 +167,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Mail className="w-4 h-4 text-zinc-600 shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">Secured Communications</span>
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">General Enquiry Email</span>
                     <a href="mailto:info@jasmineadvisory.com" className="block font-mono text-white hover:text-blue-400 transition-colors font-semibold">
                       info@jasmineadvisory.com
                     </a>
@@ -178,7 +178,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Globe className="w-4 h-4 text-zinc-600 shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">Domain Gateway</span>
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block">Official Website</span>
                     <a href="https://jasmineadvisory.com" target="_blank" rel="noreferrer" className="block font-mono text-white hover:text-blue-400 transition-colors">
                       www.jasmineadvisory.com
                     </a>
@@ -216,7 +216,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                 >
                   <div className="flex items-center justify-between mb-6 border-b border-zinc-900 pb-4">
                     <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                      Secured Trade Slips
+                      Submitted Enquiries
                     </h3>
                     <button
                       id="btn-back-to-form"
@@ -268,7 +268,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                   className="glass-panel p-8 sm:p-10 rounded-[32px] border border-white/5 bg-zinc-950/40"
                 >
                   <h3 className="text-sm font-bold text-white mb-8 uppercase tracking-wider">
-                    Commodity Allocation Mandate
+                    Request for Quotation (RFQ)
                   </h3>
 
                   {/* Submission success alert banner */}
@@ -276,9 +276,9 @@ export default function Contact({ selectedProduct }: ContactProps) {
                     <div className="mb-6 p-4 rounded-2xl bg-zinc-900/40 border border-emerald-500/20 text-emerald-400 flex items-start gap-3">
                       <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 animate-pulse" />
                       <div>
-                        <h4 className="text-xs font-bold uppercase tracking-wider">Inquiry Synced Successfully</h4>
+                        <h4 className="text-xs font-bold uppercase tracking-wider">Inquiry Sent Successfully</h4>
                         <p className="text-[11px] mt-0.5 font-light leading-relaxed text-zinc-400">
-                          Your sourcing receipt has been logged. Our trading desk coordinates are scheduled to review details and respond within 24 business hours.
+                          Your sourcing inquiry has been logged. Our trading desk is scheduled to review your requirements and respond within 24 business hours.
                         </p>
                       </div>
                     </div>
@@ -289,7 +289,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                       {/* Name input */}
                       <div className="space-y-1.5">
                         <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block font-semibold">
-                          Client Representative Name *
+                          Your Name *
                         </label>
                         <input
                           id="input-rep-name"
@@ -305,7 +305,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                       {/* Email input */}
                       <div className="space-y-1.5">
                         <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block font-semibold">
-                          Corporate Communications Email *
+                          Your Email *
                         </label>
                         <input
                           id="input-rep-email"
@@ -323,7 +323,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                       {/* Company input */}
                       <div className="space-y-1.5">
                         <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block font-semibold">
-                          Buying Corporation *
+                          Company Name *
                         </label>
                         <input
                           id="input-rep-company"
@@ -356,7 +356,7 @@ export default function Contact({ selectedProduct }: ContactProps) {
                     {/* Product of Interest */}
                     <div className="space-y-1.5">
                       <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block font-semibold">
-                        Sought Commodity Spec / Target Grade *
+                        Commodity of Interest *
                       </label>
                       <input
                         id="input-rep-product"
@@ -373,12 +373,12 @@ export default function Contact({ selectedProduct }: ContactProps) {
                     {/* Message / Specifications */}
                     <div className="space-y-1.5">
                       <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 block font-semibold">
-                        Specific Parameters / LOI Terms
+                        Additional Information / Specifications
                       </label>
                       <textarea
                         id="input-rep-message"
                         rows={4}
-                        placeholder="Specify target monthly volumes, preferred Incoterms (FOB/CIF), discharge port coordinates, and payment structures."
+                        placeholder="Please specify target monthly volumes, preferred Incoterms (FOB/CIF), destination ports, and any particular quality standards required."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-white/5 focus:border-white/15 focus:ring-1 focus:ring-white/10 text-white text-xs placeholder-zinc-700 outline-none transition-all resize-none"
@@ -390,17 +390,17 @@ export default function Contact({ selectedProduct }: ContactProps) {
                       id="btn-submit-quotation"
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3 rounded-xl bg-white hover:bg-zinc-100 text-black font-semibold text-xs tracking-wide transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full py-4 rounded-xl bg-white hover:bg-zinc-100 text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(255,255,255,0.15)] shadow-[0_4px_12px_rgba(255,255,255,0.05)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:transform-none"
                     >
                       {isSubmitting ? (
                         <>
                           <Clock className="w-4 h-4 animate-spin text-black" />
-                          LODGING MANDATE...
+                          SENDING ENQUIRY...
                         </>
                       ) : (
                         <>
                           <Send className="w-3.5 h-3.5" />
-                          Transmit Sourcing Mandate
+                          Submit Sourcing Inquiry
                         </>
                       )}
                     </button>

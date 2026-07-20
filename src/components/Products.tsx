@@ -7,62 +7,85 @@ interface ProductsProps {
 
 const CATEGORIES = [
   {
-    id: "energy",
-    title: "Energy & Petroleum",
-    subtitle: "High-Calorific Hydrocarbons",
-    description: "Sourcing and transport of high-grade petroleum hydrocarbons, alternative energy, and industrial coal to key global trade lanes with absolute regulatory and quality verification.",
+    id: "petroleum",
+    title: "Petroleum Products",
+    subtitle: "Refined Fuel & Petroleum Sourcing",
+    description: "Coordination of high-grade petroleum hydrocarbons, refined diesel, and aviation fuels to key global trade lanes with absolute quality inspection.",
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1600&auto=format&fit=crop",
     items: [
-      { name: "EN590 Diesel (10PPM)", spec: "Ultra-low sulphur diesel compliant with Euro 6 standard." },
-      { name: "Jet A1 Aviation Fuel", spec: "Commercial aviation turbine fuel matching DEF STAN 91-091." },
-      { name: "Liquefied Natural Gas (LNG)", spec: "Cryogenic natural gas shipments for state utility grids." },
-      { name: "Liquefied Petroleum Gas (LPG)", spec: "Propane-butane industrial mixture for localized power." },
-      { name: "Crude Oil (SGP / Brent)", spec: "Light sweet and medium sour grades directly from origin wells." },
-      { name: "Bitumen (Pen 60/70)", spec: "Asphalt formulations for large-scale highway infrastructure." }
+      { name: "EN590 Diesel (10PPM)", spec: "Ultra-low sulphur diesel conforming to Euro standards." },
+      { name: "Jet A1 Aviation Fuel", spec: "Commercial aviation turbine fuel matching standard international specifications." },
+      { name: "Liquefied Natural Gas (LNG)", spec: "Liquefied natural gas shipments managed via certified ocean carriers." },
+      { name: "Liquefied Petroleum Gas (LPG)", spec: "Propane-butane industrial mixture for energy and power distribution." },
+      { name: "Crude Oil (Brent / Sweet)", spec: "Light sweet and medium sour grades sourced from established production facilities." },
+      { name: "Bitumen (Pen 60/70)", spec: "Asphalt formulations for civil highway and road paving projects." }
+    ]
+  },
+  {
+    id: "fertilizers",
+    title: "Fertilizers",
+    subtitle: "Essential Nutrients & Soil Inputs",
+    description: "Bulk supply and distribution of essential soil nutrients and agricultural chemical inputs to sustain robust agricultural yields.",
+    image: "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=1600&auto=format&fit=crop",
+    items: [
+      { name: "Urea (Granular & Prilled)", spec: "Nitrogen 46% min agricultural grade for direct soil application." },
+      { name: "Diammonium Phosphate (DAP)", spec: "High-concentration fertilizer supplying phosphorus and nitrogen." },
+      { name: "Potassium Chloride (MOP)", spec: "Premium muriate of potash for crop resistance and strength." },
+      { name: "Monoammonium Phosphate (MAP)", spec: "Water-soluble fertilizer ideal for diverse soil conditions." }
     ]
   },
   {
     id: "agriculture",
-    title: "Agriculture & Fertilizers",
-    subtitle: "Sovereign Food Security & Soil Nutrients",
-    description: "Bulk distribution of primary fertilizers and essential food commodities. Sustaining food supply systems and agricultural yield optimization through secure, verified logistics.",
-    image: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?q=80&w=1600&auto=format&fit=crop",
+    title: "Agricultural Commodities",
+    subtitle: "Staple Crops & Grain Distribution",
+    description: "Sourcing and distribution of primary food grains and staple agricultural stocks to sustain international consumer demand.",
+    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1600&auto=format&fit=crop",
     items: [
-      { name: "Urea (Granular & Prilled)", spec: "Nitrogen 46% min agricultural grade for fertilizer formulation." },
-      { name: "Diammonium Phosphate (DAP)", spec: "Concentrated phosphorus and nitrogen source for robust root systems." },
       { name: "Premium Grains & Rice", spec: "Thai Jasmine, Basmati, Yellow Corn (Maize), and Non-GMO Soybean." },
-      { name: "Refined White Sugar (ICUMSA 45)", spec: "High-purity refined sugar for food processing conglomerates." },
-      { name: "Edible & Palm Oils (RBD)", spec: "Cooking oils and industrial baking fats direct from ASEAN mills." },
-      { name: "Direct-Origin Spices", spec: "Green Cardamom, Black Pepper (550GL min), Turmeric, and Zanzibar Cloves." }
+      { name: "Refined White Sugar (ICUMSA 45)", spec: "High-purity refined cane sugar for large-scale food processing." },
+      { name: "Yellow Corn / Maize", spec: "Animal feed and human grade grain matching export standards." },
+      { name: "Non-GMO Soybean", spec: "Sourced from established agricultural estates with verified quality." }
+    ]
+  },
+  {
+    id: "edible-oils",
+    title: "Edible Oils and Spices",
+    subtitle: "Refined Oils & Organic Condiments",
+    description: "Reliable distribution of premium vegetable cooking oils and essential spices sourced directly from origin processors.",
+    image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1600&auto=format&fit=crop",
+    items: [
+      { name: "RBD Palm Olein & Cooking Oils", spec: "High-grade refined vegetable oils direct from established ASEAN mills." },
+      { name: "Coconut Oil (Crude & RBD)", spec: "Refined and crude coconut oils for cosmetic and food applications." },
+      { name: "Premium Black Pepper", spec: "High-density black pepper matching international export specifications." },
+      { name: "Direct-Origin Spices", spec: "Green Cardamom, Turmeric, and Zanzibar Cloves sourced at origin." }
     ]
   },
   {
     id: "metals",
-    title: "Metals & Minerals",
-    subtitle: "Primary Smelting & Industrial Ores",
-    description: "Connecting smelting centers to manufacturing hubs with high-grade metal cathodes and essential mineral ores. Sourced from verified LME-registered producers.",
+    title: "Metals and Minerals",
+    subtitle: "Industrial Minerals & Metal Cathodes",
+    description: "Connecting smelting centers and mining resources to industrial manufacturing hubs with premium ores and cathode products.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600&auto=format&fit=crop",
     items: [
-      { name: "Copper Cathodes", spec: "Grade A 99.99% purity, LME registered for wire and electronics." },
-      { name: "Aluminium Ingots", spec: "Primary high-purity casting grades for automotive and aerospace." },
-      { name: "Iron Ore", spec: "High-grade hematite and magnetite fines for modern blast furnaces." },
-      { name: "Structural Steel Products", spec: "Reinforcement rebar, steel billet, and wire rod solutions." },
+      { name: "Copper Cathodes", spec: "Grade A high-purity copper cathodes for electrical and manufacturing use." },
+      { name: "Aluminium Ingots", spec: "Primary high-purity casting alloys for industrial and structural design." },
+      { name: "High-Grade Iron Ore", spec: "Hematite and magnetite ores optimized for furnace production." },
       { name: "Chrome Ore", spec: "Metallurgical and chemical grades for stainless steel alloying." },
-      { name: "Industrial Quartz", spec: "High-silica glass and smelting raw quartz with minimal impurities." }
+      { name: "Industrial Quartz", spec: "High-silica raw materials for high-end glass and silicon manufacturing." }
     ]
   },
   {
     id: "poultry",
-    title: "Cold-Chain Logistics",
-    subtitle: "Halal Certified Frozen Poultry",
-    description: "Sovereign distribution of HACCP and Halal-certified frozen poultry items, managed via temperature-controlled maritime reefers to ensure absolute freshness.",
+    title: "Frozen Poultry",
+    subtitle: "Halal & HACCP Cold-Chain Sourcing",
+    description: "Logistical coordination and supply of high-grade frozen poultry items, compliant with international food safety standards.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
     items: [
-      { name: "Frozen Whole Chicken", spec: "Halal griller specification, giblets included or excluded." },
-      { name: "Frozen Chicken Breast", spec: "Boneless, skinless single fillet optimized for food processing." },
-      { name: "Frozen Chicken Wings", spec: "3-joint standard export specification matching high grade standards." },
-      { name: "Frozen Chicken Drumsticks", spec: "Individually quick frozen (IQF) deep chill portions." },
-      { name: "Frozen Chicken Feet & Paws", spec: "Grade A washed, outer yellow skin and black spot free." }
+      { name: "Frozen Whole Chicken", spec: "Halal-certified griller specifications, cleanly packed and quick-frozen." },
+      { name: "Frozen Chicken Breast", spec: "Boneless, skinless single fillets optimized for industrial processors." },
+      { name: "Frozen Chicken Wings", spec: "Standard export-grade multi-joint wing portions." },
+      { name: "Frozen Chicken Drumsticks", spec: "Portion-controlled cuts shipped in temperature-regulated containers." },
+      { name: "Frozen Chicken Feet & Paws", spec: "Grade A washed, processed and yellow skin-free specifications." }
     ]
   }
 ];
@@ -79,13 +102,13 @@ export default function Products({ onInquire }: ProductsProps) {
         {/* Section Title Header Block */}
         <div className="text-left mb-24 sm:mb-32 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0F172A]/85 border border-white/5 text-zinc-400 mb-6">
-            <span className="font-mono text-[9px] tracking-widest uppercase text-blue-400">Spec Registry</span>
+            <span className="font-mono text-[9px] tracking-widest uppercase text-blue-400">Our Products</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-none">
-            Sought commodities.
+            Commodity Portfolios.
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
-            We operate rigorous logistics structures across four primary commodity portfolios. Each transaction is verified by SGS assay logs prior to boarding.
+            We coordinate international supply and logistics across six primary commodity categories. Every transaction is subject to verified independent quality assays prior to dispatch.
           </p>
         </div>
 
@@ -137,14 +160,14 @@ export default function Products({ onInquire }: ProductsProps) {
                   {/* List of Products (Elegant layout, not cards) */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 pt-6 border-t border-zinc-900/60">
                     {category.items.map((item, i) => (
-                      <div key={i} className="space-y-1">
+                      <div key={i} className="space-y-1 group/item cursor-default">
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0" />
-                          <span className="text-xs font-bold text-white uppercase tracking-wider">
+                          <CheckCircle2 className="w-4 h-4 text-blue-500 group-hover/item:text-cyan-400 transition-colors duration-300 shrink-0" />
+                          <span className="text-xs font-bold text-zinc-300 group-hover/item:text-white uppercase tracking-wider transition-colors duration-300">
                             {item.name}
                           </span>
                         </div>
-                        <p className="text-[11px] text-zinc-500 font-light leading-normal pl-6">
+                        <p className="text-[11px] text-zinc-500 group-hover/item:text-zinc-400 font-light leading-normal pl-6 transition-colors duration-300">
                           {item.spec}
                         </p>
                       </div>
@@ -156,9 +179,9 @@ export default function Products({ onInquire }: ProductsProps) {
                     <button
                       id={`btn-learn-more-${category.id}`}
                       onClick={() => onInquire(category.items[0].name)}
-                      className="inline-flex items-center gap-2 font-mono text-[10px] font-bold tracking-widest text-blue-400 hover:text-white uppercase transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 font-sans text-xs font-semibold tracking-wider text-blue-400 hover:text-white uppercase transition-colors cursor-pointer"
                     >
-                      Inquire Sector Specifications{" "}
+                      Product Enquiry{" "}
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

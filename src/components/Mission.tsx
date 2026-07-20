@@ -4,33 +4,33 @@ import { ShieldCheck, Globe, Scale, Handshake, DollarSign, Truck } from "lucide-
 export default function Mission() {
   const missionCards = [
     {
-      title: "Optimized Sourcing",
-      description: "Rigorous algorithmic vetting and on-site assays to guarantee physical commodities match grade specs.",
+      title: "Quality Assurance",
+      description: "We coordinate independent testing and assays by globally recognized inspectors to verify exact cargo grades and quality.",
       icon: <ShieldCheck className="w-5 h-5 text-blue-400" />,
     },
     {
-      title: "Unified Trade Network",
-      description: "A secure, direct-matching ledger of vetted sovereign buyers and top-tier primary producers.",
+      title: "Global Supply Sourcing",
+      description: "Sourcing from established refineries, producers, and agricultural collectives across major maritime shipping corridors.",
       icon: <Globe className="w-5 h-5 text-blue-400" />,
     },
     {
-      title: "Immutable Compliance",
-      description: "Adhering to strict international trade regulation models with complete visibility at every route node.",
+      title: "Regulatory Compliance",
+      description: "Strictest adherence to international trade laws, local customs regulations, and standard INCOTERMS frameworks.",
       icon: <Scale className="w-5 h-5 text-blue-400" />,
     },
     {
-      title: "Dynamic Allocation",
-      description: "Securing stable, multi-decade resource pools to sustain sovereign and commercial demands.",
+      title: "Direct Relations",
+      description: "Fostering direct commercial alignment with primary producers to ensure supply stability and reliable planning.",
       icon: <Handshake className="w-5 h-5 text-blue-400" />,
     },
     {
-      title: "Arbitrage Minimization",
-      description: "Origin-direct relationships and optimized freight booking to eliminate broker margin bloat.",
+      title: "Cost Optimization",
+      description: "Streamlining logistics routes and utilizing direct supplier networks to eliminate unnecessary intermediary margins.",
       icon: <DollarSign className="w-5 h-5 text-blue-400" />,
     },
     {
-      title: "Autonomous Logistics",
-      description: "Synchronized transit streams, from port customs automation to real-time vessel telemetry.",
+      title: "Logistics Coordination",
+      description: "Professional management of ocean freight operations, customs documentation, and scheduled port deliveries.",
       icon: <Truck className="w-5 h-5 text-blue-400" />,
     },
   ];
@@ -64,7 +64,7 @@ export default function Mission() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-950 border border-white/5 text-zinc-400 mb-4"
           >
-            <span className="font-mono text-[9px] tracking-widest uppercase">Operational Architecture</span>
+            <span className="font-mono text-[9px] tracking-widest uppercase">Vision and Mission</span>
           </motion.div>
           
           <motion.h2
@@ -73,7 +73,7 @@ export default function Mission() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none"
           >
-            Built for velocity & scale.
+            Delivering stability &amp; supply integrity.
           </motion.h2>
         </div>
 
@@ -108,7 +108,7 @@ export default function Mission() {
 
               {/* Decorative indexing */}
               <div className="mt-8 pt-4 border-t border-zinc-900/60 flex justify-between items-center text-[10px] font-mono">
-                <span className="text-zinc-600 uppercase tracking-widest">Protocol Node</span>
+                <span className="text-zinc-600 uppercase tracking-widest">Operational Pillar</span>
                 <span className="text-zinc-500 font-bold">
                   {String(idx + 1).padStart(2, "0")}
                 </span>

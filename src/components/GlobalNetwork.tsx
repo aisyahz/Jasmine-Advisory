@@ -1,86 +1,49 @@
 import { useState } from "react";
-import { Globe, ShieldAlert, Cpu } from "lucide-react";
+import { Globe, Shield, Anchor } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-interface NetworkHub {
+interface TradeRegion {
   id: string;
   name: string;
   coordinates: { x: number; y: number };
   role: string;
   commodities: string;
-  portStatus: string;
 }
 
-const HUBS: NetworkHub[] = [
+const REGIONS: TradeRegion[] = [
   {
-    id: "malaysia",
-    name: "Malaysia (Kuala Lumpur)",
+    id: "apac",
+    name: "Asia-Pacific Corridors",
     coordinates: { x: 750, y: 310 },
-    role: "Central Routing Node & ASEAN Distribution Hub",
-    commodities: "Petroleum, Fertilizers, Edible Oils, Metal Products",
-    portStatus: "Port Klang Terminal - Online",
+    role: "Trade facilitation lanes connecting major refineries, agricultural cooperatives, and edible oil processing mills across the ASEAN region.",
+    commodities: "Petroleum Products, Edible Oils, Agricultural Grains, Frozen Poultry",
   },
   {
-    id: "singapore",
-    name: "Singapore Hub",
-    coordinates: { x: 765, y: 325 },
-    role: "Global Marine Bunkering & Financial Clearing Desk",
-    commodities: "Aviation Fuel, EN590 Diesel, LPG/LNG, Financial Trade Execution",
-    portStatus: "PSA Singapore - High Volume Terminal",
-  },
-  {
-    id: "uae",
-    name: "UAE (Dubai/Abu Dhabi)",
-    coordinates: { x: 580, y: 220 },
-    role: "Middle East Sourcing & Energy Logistics Desk",
-    commodities: "Crude Oil, Aviation Fuels, Sulphur, Urea, Bitumen",
-    portStatus: "Fujairah & Jebel Ali Terminals",
-  },
-  {
-    id: "china",
-    name: "China (Shanghai/Beijing)",
-    coordinates: { x: 795, y: 175 },
-    role: "East Asia Trade Desk & Commodity Ingestion Hub",
-    commodities: "Metals & Minerals, Iron Ore, Copper Cathodes, Edible Oils",
-    portStatus: "Shanghai Port - Active Discharge",
-  },
-  {
-    id: "india",
-    name: "India (Mumbai)",
-    coordinates: { x: 670, y: 240 },
-    role: "South Asian Agricultural & Fertilizers Sourcing Centre",
-    commodities: "NPK Compound, Spices, Pulses, Frozen Poultry",
-    portStatus: "Nhava Sheva Port - Active Sourcing",
+    id: "mideast",
+    name: "Middle East & South Asia",
+    coordinates: { x: 620, y: 230 },
+    role: "Primary sourcing pathways for mineral sulfur, petrochemicals, nitrogenous fertilizers, and traditional organic spices.",
+    commodities: "Crude Derivatives, Chemical Fertilizers, Spices",
   },
   {
     id: "europe",
-    name: "Europe (Rotterdam/London)",
-    coordinates: { x: 480, y: 110 },
-    role: "North Sea Transit Office & Quality Standard Verification",
-    commodities: "Biofuels (UCO), Crude Oil Derivatives, Premium Metals",
-    portStatus: "Port of Rotterdam - Active Transshipment",
+    name: "European Trade Routes",
+    coordinates: { x: 480, y: 130 },
+    role: "Established maritime routes coordinating premium grade refined metals and mineral ores matching strict industrial specifications.",
+    commodities: "Refined Metals, Mineral Ores, Energy Stocks",
   },
   {
-    id: "usa",
-    name: "USA (Houston/New York)",
-    coordinates: { x: 220, y: 160 },
-    role: "Americas Energy Desk & Agricultural Export Desk",
-    commodities: "Petroleum Coke, Coal, Yellow Corn, Soybean, Chemicals",
-    portStatus: "Port of Houston - Active Loading",
-  },
-  {
-    id: "africa",
-    name: "Africa Network Hub",
-    coordinates: { x: 500, y: 340 },
-    role: "Pan-African Mineral Sourcing & Ingestion Terminal",
-    commodities: "Chrome Ore, Iron Ore, Quartz, Spices, Raw Agricultural Goods",
-    portStatus: "Durban & strategic West-African Gateways",
-  },
+    id: "americas",
+    name: "Pan-American Sourcing",
+    coordinates: { x: 220, y: 180 },
+    role: "Facilitating the export and shipment coordination of large-scale agricultural grain stocks and industrial ores.",
+    commodities: "Agricultural Commodities, Iron Ore, Minerals",
+  }
 ];
 
 export default function GlobalNetwork() {
-  const [hoveredHub, setHoveredHub] = useState<NetworkHub | null>(null);
-  const [selectedHub, setSelectedHub] = useState<NetworkHub>(HUBS[0]);
+  const [hoveredRegion, setHoveredRegion] = useState<TradeRegion | null>(null);
+  const [selectedRegion, setSelectedRegion] = useState<TradeRegion>(REGIONS[0]);
 
   return (
     <section id="network" className="py-32 bg-[#050816] relative overflow-hidden border-t border-zinc-900/60">
@@ -93,53 +56,53 @@ export default function GlobalNetwork() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           <div className="lg:col-span-6 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-950 border border-white/5 text-zinc-400">
-              <span className="font-mono text-[9px] tracking-widest uppercase">Global Ledger</span>
+              <span className="font-mono text-[9px] tracking-widest uppercase">Global Sourcing</span>
             </div>
             
             <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
-              The routing network.
+              Global Network.
             </h2>
 
             <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-lg">
-              Jasmine Advisory coordinates heavy freight transshipments and maritime logistics via strategically synchronized trading outposts, ensuring zero-latency supply stability.
+              Jasmine Advisory coordinates the logistics, transshipment, and shipping of physical commodities across primary trade corridors, establishing solid bridges between quality origins and industrial discharge terminals.
             </p>
           </div>
 
           <div className="lg:col-span-6 lg:pl-12 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 lg:pt-8 border-t lg:border-t-0 lg:border-l border-zinc-900">
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-white">
-                <Globe className="w-4 h-4 text-zinc-500 animate-pulse" />
+                <Globe className="w-4 h-4 text-zinc-500" />
                 <span className="text-xs font-bold uppercase tracking-wider">Direct Origin</span>
               </div>
               <p className="text-xs text-zinc-500 font-light leading-relaxed">
-                Direct partnerships with sovereign state-owned entities.
+                Direct connections with registered producers and cooperatives worldwide.
               </p>
             </div>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-white">
-                <Cpu className="w-4 h-4 text-zinc-500" />
-                <span className="text-xs font-bold uppercase tracking-wider">Dynamic Routing</span>
+                <Anchor className="w-4 h-4 text-zinc-500" />
+                <span className="text-xs font-bold uppercase tracking-wider">Logistics Coordination</span>
               </div>
               <p className="text-xs text-zinc-500 font-light leading-relaxed">
-                Real-time re-routing of dry cargo vessels to bypass shipping bottlenecks.
+                Expert maritime freight management and customs coordination.
               </p>
             </div>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-white">
-                <ShieldAlert className="w-4 h-4 text-zinc-500" />
-                <span className="text-xs font-bold uppercase tracking-wider">Risk Mitigation</span>
+                <Shield className="w-4 h-4 text-zinc-500" />
+                <span className="text-xs font-bold uppercase tracking-wider">Assay Validation</span>
               </div>
               <p className="text-xs text-zinc-500 font-light leading-relaxed">
-                Standard hedging and SGS verification models built into every transaction block.
+                Facilitating independent quality inspections prior to cargo dispatch.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Dynamic SVG Map Presentation and Detail Panel */}
+        {/* Subtle Map Presentation and Detail Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Area: Large Interactive SVG World Map */}
+          {/* Left Area: Visual Map Representation (Subtle, No Fake Live Tracking) */}
           <div className="lg:col-span-8 bg-zinc-950/40 rounded-[28px] border border-white/5 p-4 sm:p-8 relative overflow-hidden">
             <div className="relative aspect-[2/1] w-full min-h-[300px]">
               <svg
@@ -158,57 +121,65 @@ export default function GlobalNetwork() {
                   ))}
                 </g>
 
-                {/* Draw Trade connection pathways */}
-                <g stroke="rgba(255, 255, 255, 0.1)" strokeWidth="0.8" strokeDasharray="3,3" className="animate-[dash_40s_linear_infinite]">
-                  <path d="M750,310 Q615,260 580,220" /> {/* KL to UAE */}
-                  <path d="M750,310 Q630,175 480,110" /> {/* KL to Europe */}
-                  <path d="M750,310 Q772,240 795,175" /> {/* KL to China */}
-                  <path d="M580,220 Q400,190 220,160" /> {/* UAE to USA */}
-                  <path d="M480,110 Q350,130 220,160" /> {/* Europe to USA */}
-                  <path d="M580,220 Q540,280 500,340" /> {/* UAE to Africa */}
-                  <path d="M750,310 Q710,275 670,240" /> {/* KL to India */}
+                {/* Draw Trade connection pathways (purely visual representation) */}
+                <g stroke="rgba(255, 255, 255, 0.08)" strokeWidth="0.8" strokeDasharray="4,4">
+                  <path d="M750,310 Q685,270 620,230" /> {/* APAC to Mideast */}
+                  <path d="M750,310 Q615,220 480,130" /> {/* APAC to Europe */}
+                  <path d="M620,230 Q420,205 220,180" /> {/* Mideast to Americas */}
+                  <path d="M480,130 Q350,155 220,180" /> {/* Europe to Americas */}
                 </g>
 
-                {/* Render glowing node rings & markers */}
-                {HUBS.map((hub) => {
-                  const isHovered = hoveredHub?.id === hub.id;
-                  const isSelected = selectedHub.id === hub.id;
+                {/* Render nodes & markers */}
+                {REGIONS.map((region) => {
+                  const isHovered = hoveredRegion?.id === region.id;
+                  const isSelected = selectedRegion.id === region.id;
                   return (
                     <g
-                      key={hub.id}
+                      key={region.id}
                       className="cursor-pointer"
-                      onMouseEnter={() => setHoveredHub(hub)}
-                      onMouseLeave={() => setHoveredHub(null)}
-                      onClick={() => setSelectedHub(hub)}
+                      onMouseEnter={() => setHoveredRegion(region)}
+                      onMouseLeave={() => setHoveredRegion(null)}
+                      onClick={() => setSelectedRegion(region)}
                     >
                       {/* Interactive click catchment area */}
-                      <circle cx={hub.coordinates.x} cy={hub.coordinates.y} r="18" fill="transparent" />
+                      <circle cx={region.coordinates.x} cy={region.coordinates.y} r="18" fill="transparent" />
                       
-                      {/* Pulsing ring */}
+                      {/* Pulsing Aura */}
                       <circle
-                        cx={hub.coordinates.x}
-                        cy={hub.coordinates.y}
-                        r={isSelected ? "11" : isHovered ? "8" : "5"}
+                        cx={region.coordinates.x}
+                        cy={region.coordinates.y}
+                        r={isSelected ? "15" : "10"}
+                        fill={isSelected ? "rgba(59, 130, 246, 0.22)" : "rgba(34, 211, 238, 0.08)"}
+                        className="animate-pulse"
+                        style={{
+                          transformOrigin: `${region.coordinates.x}px ${region.coordinates.y}px`,
+                        }}
+                      />
+                      
+                      {/* Ring */}
+                      <circle
+                        cx={region.coordinates.x}
+                        cy={region.coordinates.y}
+                        r={isSelected ? "10" : isHovered ? "8" : "5"}
                         fill="transparent"
-                        stroke={isSelected ? "#3b82f6" : "#27272a"}
+                        stroke={isSelected ? "#22d3ee" : isHovered ? "#3b82f6" : "rgba(255,255,255,0.15)"}
                         strokeWidth="1.5"
-                        className="animate-ping origin-center"
-                        style={{ animationDuration: isSelected ? "2.5s" : "4s" }}
+                        className="transition-all duration-300"
                       />
                       
                       {/* Core point */}
                       <circle
-                        cx={hub.coordinates.x}
-                        cy={hub.coordinates.y}
+                        cx={region.coordinates.x}
+                        cy={region.coordinates.y}
                         r={isSelected ? "4.5" : isHovered ? "3.5" : "2.5"}
-                        fill={isSelected ? "#ffffff" : "#52525b"}
+                        fill={isSelected ? "#ffffff" : isHovered ? "#22d3ee" : "#94a3b8"}
                         className="transition-all duration-300"
                       />
 
-                      {/* Floating tooltip labels on map */}
+                      {/* Floating labels */}
                       <text
-                        x={hub.coordinates.x}
-                        y={hub.coordinates.y - 12}
+                        x={region.coordinates.x}
+                        y={region.coordinates.y - 12}
                         textAnchor="middle"
                         className={`font-mono text-[8px] uppercase tracking-widest font-semibold fill-zinc-300 transition-opacity duration-300 pointer-events-none ${
                           isSelected || isHovered ? "opacity-100" : "opacity-0"
@@ -217,7 +188,7 @@ export default function GlobalNetwork() {
                           textShadow: "0 2px 4px rgba(0,0,0,0.9)",
                         }}
                       >
-                        {hub.name.split(" ")[0]}
+                        {region.name.split(" ")[0]}
                       </text>
                     </g>
                   );
@@ -226,17 +197,17 @@ export default function GlobalNetwork() {
             </div>
             
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 items-center justify-center border-t border-zinc-900 pt-4 font-mono text-[9px] tracking-[0.2em] text-zinc-500 uppercase">
-              <span>● MULTI-MODAL ROUTING CORE</span>
-              <span>● LIQUID & BULK CONTAINER ARRAYS</span>
-              <span>● SGS VERIFIED NODES</span>
+              <span>● GLOBAL TRANSIT LANES</span>
+              <span>● MULTI-COMMODITY FACILITATION</span>
+              <span>● INDEPENDENT QUALITY INSPECTION</span>
             </div>
           </div>
 
-          {/* Right Area: Interactive Hub details information card */}
+          {/* Right Area: Interactive Corridor details information card */}
           <div className="lg:col-span-4">
             <AnimatePresence mode="wait">
               <motion.div
-                key={selectedHub.id}
+                key={selectedRegion.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -244,37 +215,30 @@ export default function GlobalNetwork() {
                 className="glass-panel p-8 rounded-[24px] border border-white/5 relative"
               >
                 <span className="font-mono text-[9px] tracking-widest text-zinc-500 block uppercase mb-1">
-                  Active Routing Terminal
+                  Verified Commodity Corridor
                 </span>
                 
                 <h3 className="text-xl font-bold text-white tracking-tight mb-4">
-                  {selectedHub.name}
+                  {selectedRegion.name}
                 </h3>
 
                 <div className="space-y-6 pt-4 border-t border-zinc-900">
                   <div>
-                    <span className="font-mono text-[8px] tracking-widest text-zinc-500 uppercase block mb-1">Operational Role</span>
+                    <span className="font-mono text-[8px] tracking-widest text-zinc-500 uppercase block mb-1">Scope of Facilitation</span>
                     <p className="text-sm text-zinc-400 font-light">
-                      {selectedHub.role}
+                      {selectedRegion.role}
                     </p>
                   </div>
 
                   <div>
-                    <span className="font-mono text-[8px] tracking-widest text-zinc-500 uppercase block mb-1.5">Commodities Manifested</span>
+                    <span className="font-mono text-[8px] tracking-widest text-zinc-500 uppercase block mb-1.5">Primary Commodities</span>
                     <div className="flex flex-wrap gap-1.5">
-                      {selectedHub.commodities.split(", ").map((item, idx) => (
+                      {selectedRegion.commodities.split(", ").map((item, idx) => (
                         <span key={idx} className="font-mono text-[8px] bg-zinc-900 px-2 py-0.5 rounded text-zinc-300 font-medium">
                           {item}
                         </span>
                       ))}
                     </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-zinc-900 flex items-center space-x-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                    <span className="font-mono text-[8px] tracking-widest text-zinc-500 uppercase font-medium">
-                      {selectedHub.portStatus}
-                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -283,7 +247,7 @@ export default function GlobalNetwork() {
             {/* Quick guide text */}
             <div className="mt-4 p-4 border border-dashed border-zinc-900 rounded-2xl text-center">
               <p className="font-mono text-[8px] tracking-wider text-zinc-600 uppercase">
-                *Inspect strategic nodes by clicking interactive pulse markers.
+                *Click on the pulsing map markers to view commodity corridor scopes.
               </p>
             </div>
           </div>

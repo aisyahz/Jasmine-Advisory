@@ -7,12 +7,12 @@ interface HeroProps {
 }
 
 export default function Hero({ onQuoteClick, onProductsClick }: HeroProps) {
-  // Trust indicators below the hero
+  // Trust indicators below the hero (qualitative values conforming strictly to profile limits)
   const trustIndicators = [
-    { label: "Global Partners", value: "120+" },
-    { label: "Sovereign Countries", value: "25+" },
-    { label: "Operational Guarantee", value: "Reliable Supply" },
-    { label: "Compliance Assured", value: "Verified Trade" },
+    { label: "Commodity Focus", value: "Verified Sourcing" },
+    { label: "Trade Compliance", value: "Fully Governed" },
+    { label: "Logistics Framework", value: "Vessel Inspection" },
+    { label: "Financial Security", value: "Structured Trade" },
   ];
 
   // Grayscale international industry standards and certificates
@@ -126,19 +126,15 @@ export default function Hero({ onQuoteClick, onProductsClick }: HeroProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center pt-36 pb-12">
         <div className="max-w-4xl space-y-8 text-left">
           
-          {/* Elite Trading Desk Status Pill */}
+          {/* Global Trade Facilitation Label */}
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F172A]/80 border border-white/5 text-zinc-400 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F172A]/40 border border-white/10 text-zinc-300"
           >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
-            </span>
-            <span className="font-mono text-[9px] tracking-[0.25em] uppercase font-semibold text-zinc-300">
-              International Commerce Desk
+            <span className="font-mono text-[9px] tracking-[0.25em] uppercase font-semibold text-zinc-400">
+              Global Commodity Trade Facilitation
             </span>
           </motion.div>
 
@@ -148,15 +144,11 @@ export default function Hero({ onQuoteClick, onProductsClick }: HeroProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05]"
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
             >
-              Global Commodity <br />
+              Jasmine Advisory <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Trading.
-              </span>{" "}
-              <br className="hidden sm:inline" />
-              <span className="text-zinc-300 font-light text-4xl sm:text-6xl lg:text-7xl">
-                Trusted Worldwide.
+                Commodity Sourcing &amp; Export Facilitation
               </span>
             </motion.h1>
           </div>
@@ -166,9 +158,9 @@ export default function Hero({ onQuoteClick, onProductsClick }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-zinc-400 text-sm sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl"
+            className="text-zinc-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl"
           >
-            Connecting international buyers with verified global suppliers across energy, agriculture and industrial commodities. Backed by rigorous quality assay logs and Tier-1 shipping corridors.
+            We coordinate the supply, transaction management, and ocean transit of essential physical commodities—ranging from petroleum products and fertilizers to metals, edible oils, agricultural stocks, and frozen poultry—across premier international shipping routes.
           </motion.p>
 
           {/* Premium Call to Action Buttons */}
@@ -176,23 +168,23 @@ export default function Hero({ onQuoteClick, onProductsClick }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap gap-4 pt-4"
+            className="flex flex-wrap gap-4 pt-2"
           >
             <button
               id="hero-btn-request-quote"
               onClick={onQuoteClick}
-              className="px-8 py-4 rounded-xl bg-white hover:bg-zinc-100 text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] cursor-pointer flex items-center gap-2.5"
+              className="group px-8 py-4 rounded-xl bg-white hover:bg-zinc-100 text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(255,255,255,0.15)] shadow-[0_4px_12px_rgba(255,255,255,0.05)] cursor-pointer flex items-center gap-2.5"
             >
-              Request Quotation
-              <ArrowRight className="w-3.5 h-3.5 text-black" />
+              Request a Quotation
+              <ArrowRight className="w-3.5 h-3.5 text-black transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
             <button
               id="hero-btn-view-products"
               onClick={onProductsClick}
-              className="px-8 py-4 rounded-xl bg-[#0F172A]/80 hover:bg-[#1E293B] text-white border border-white/5 hover:border-white/10 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] cursor-pointer backdrop-blur-md"
+              className="px-8 py-4 rounded-xl bg-[#0F172A]/80 hover:bg-[#1E293B] text-zinc-100 hover:text-white border border-white/5 hover:border-white/15 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] cursor-pointer backdrop-blur-md"
             >
-              View Products
+              Explore Our Products
             </button>
           </motion.div>
 

@@ -4,43 +4,43 @@ import { Layers, ShieldCheck, RefreshCw, DollarSign, Award, Anchor } from "lucid
 export default function WhyUs() {
   const bentoItems = [
     {
-      title: "Consolidated Supply Portfolio",
-      description: "Our pipelines unify refined energy fuels, agricultural fertilizers, sovereign food stocks, and LME-grade metal cathodes into a single trade execution desk.",
+      title: "Unified Trade Facilitation",
+      description: "Our experience covers refined fuels, fertilizers, agricultural grains, edible oils, metal minerals, and frozen poultry under one reliable trade facilitation house.",
       icon: <Layers className="w-5 h-5 text-blue-400" />,
       gridClass: "md:col-span-2",
-      badge: "Institutional Scale"
+      badge: "Integrated Services"
     },
     {
-      title: "Sovereign-Grade Auditing",
-      description: "Complete document transparency with immutable SGS assay verification and top-tier financial security.",
+      title: "Third-Party Inspections",
+      description: "Complete documentary transparency with independent quality checks and grade verification by globally recognized inspectors.",
       icon: <ShieldCheck className="w-5 h-5 text-cyan-400" />,
       gridClass: "md:col-span-1",
-      badge: "SGS Certified"
+      badge: "Verified Assay"
     },
     {
-      title: "Broker Spread Minimization",
-      description: "By sourcing directly from extraction concessions and primary refinery terminals, we bypass opaque multi-tier broker margin inflation.",
+      title: "Direct Producer Connections",
+      description: "By sourcing directly from primary producers, refineries, and agricultural collectives, we minimize multi-tier intermediary overheads.",
       icon: <DollarSign className="w-5 h-5 text-cyan-400" />,
       gridClass: "md:col-span-1",
-      badge: "Origin Sourced"
+      badge: "Direct Sourced"
     },
     {
-      title: "Strategic Maritime Assets",
-      description: "Direct laycan bookings and bulk chartering facilities operating across prime intercontinental shipping hubs.",
+      title: "Experienced Logistics",
+      description: "Professional ocean cargo coordination, container slots booking, and customs processing across prime shipping corridors.",
       icon: <Anchor className="w-5 h-5 text-blue-400" />,
       gridClass: "md:col-span-2",
-      badge: "Global Logistics"
+      badge: "Freight Operations"
     },
     {
-      title: "Delivery Safeguards",
-      description: "We mitigate sovereign delivery defaults through high contracted allocation volumes and dynamic backup reserves.",
+      title: "Structured Risk Mitigation",
+      description: "We manage and reduce transaction risks by adhering to strict compliance, structured trade documentation, and trustworthy shipping channels.",
       icon: <RefreshCw className="w-5 h-5 text-blue-400" />,
       gridClass: "md:col-span-1",
-      badge: "Zero Default"
+      badge: "Secure Trade"
     },
     {
-      title: "Global Compliance Parity",
-      description: "Fully compliant with international trade standards under strict ICC Incoterms governing protocols.",
+      title: "Incoterms Alignment",
+      description: "Every contract operates strictly in accordance with recognized International Chamber of Commerce (ICC) Incoterms.",
       icon: <Award className="w-5 h-5 text-cyan-400" />,
       gridClass: "md:col-span-2",
       badge: "ICC Compliant"
@@ -61,11 +61,11 @@ export default function WhyUs() {
           </div>
           
           <h2 className="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-none">
-            Why sovereign entities <br />
-            <span className="text-zinc-500">partner with us.</span>
+            Why commercial partners <br />
+            <span className="text-zinc-500">choose us.</span>
           </h2>
           <p className="mt-4 text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
-            We provide the infrastructure stability, absolute document transparency, and clearing rigor required by state enterprise buyers and leading conglomerates.
+            We provide the logistical stability, documentary transparency, and operational care required by industrial buyers and commercial conglomerates.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function WhyUs() {
         {/* Institutional certification stamp */}
         <div className="mt-24 border-t border-zinc-900/60 pt-12 text-center">
           <p className="font-mono text-[9px] tracking-[0.25em] text-zinc-600 uppercase">
-            CERTIFIED COMPLIANCE • SAFE TRANSACTIONAL PIPELINES • ALL CONTRACTS SECURED VIA TIER-1 BANKING STANDARDS
+            ESTABLISHED COMPLIANCE • SECURE TRANSACTION CHANNELS • INTERNATIONAL INCOTERMS COMPLIANT
           </p>
         </div>
 

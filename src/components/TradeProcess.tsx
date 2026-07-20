@@ -76,10 +76,10 @@ export default function TradeProcess() {
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
-            The trade pipeline.
+            Our Trade Process.
           </h2>
           <p className="mt-4 text-zinc-400 text-sm font-light">
-            We operate under strict, standardized procedural steps to guarantee compliance, clean bank auditing, and default-free execution.
+            We operate under strict, standardized procedural steps to guarantee compliance, clear banking records, and reliable execution.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function TradeProcess() {
                   STAGE {String(activeStep).padStart(2, "0")}
                 </span>
                 <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500">
-                  Audit Protocol
+                  Process Stage
                 </span>
               </div>
               <div className="mt-8 hidden md:block">
@@ -208,7 +208,7 @@ export default function TradeProcess() {
         {/* Timeline Instruction helper */}
         <div className="mt-6 p-4 border border-dashed border-zinc-900 rounded-2xl text-center">
           <p className="font-mono text-[8px] tracking-wider text-zinc-600 uppercase">
-            *Contract lifecycles averages 14-30 standard banking days.
+            *Typical transaction cycle averages 14-30 standard business days.
           </p>
         </div>
 

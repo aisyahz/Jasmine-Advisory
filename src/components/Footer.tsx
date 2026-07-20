@@ -49,11 +49,11 @@ export default function Footer() {
             </div>
             
             <p className="text-xs text-zinc-500 font-light leading-relaxed max-w-sm">
-              Jasmine Advisory Sdn Bhd is a technology-enabled global physical commodity trading and international export facilitation house headquartered in Kuala Lumpur, Malaysia.
+              Jasmine Advisory Sdn Bhd is a premium global physical commodity trading and international export facilitation house headquartered in Kuala Lumpur, Malaysia.
             </p>
 
             <div className="font-mono text-[8px] tracking-[0.2em] text-zinc-600 uppercase pt-2">
-              Kuala Lumpur • Singapore • Dubai Outposts
+              Kuala Lumpur • Global Sourcing Networks
             </div>
           </div>
 
@@ -73,11 +73,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Check className="w-3 h-3 text-zinc-600 shrink-0" />
-                <span>Maritime Transit Logs</span>
+                <span>Logistics &amp; Maritime Coordination</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Check className="w-3 h-3 text-zinc-600 shrink-0" />
-                <span>SGS & Intertek Grade Verification</span>
+                <span>Independent Assay Grade Verification</span>
               </li>
             </ul>
           </div>
@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-start gap-3 text-[10px] text-zinc-600 leading-relaxed font-sans">
           <ShieldAlert className="w-4 h-4 text-zinc-700 shrink-0 mt-0.5" />
           <p>
-            <strong>Regulatory Standard:</strong> Jasmine Advisory Sdn Bhd strictly enforces AML (Anti-Money Laundering) and KYC (Know Your Customer) compliance parameters under the regulatory rules of the International Chamber of Commerce (ICC). We do not release cargo allocations or activate maritime transponders without verified financial instruments (SBLC, DLC, MT103) issued by authorized Tier-1 international banking institutions.
+            <strong>Regulatory Standard:</strong> Jasmine Advisory Sdn Bhd strictly enforces AML (Anti-Money Laundering) and KYC (Know Your Customer) compliance parameters under the regulatory rules of the International Chamber of Commerce (ICC). We do not coordinate shipping schedules without verified financial instruments (SBLC, DLC, MT103) issued by authorized Tier-1 international banking institutions.
           </p>
         </div>
       </div>
