@@ -60,22 +60,38 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
           }`}
         >
           <div className="flex items-center justify-between">
-            {/* Brand Logo - Futuristic Tech Minimalist */}
+            {/* Brand Logo - Premium Double-Layered Geometric Emblem */}
             <a
               id="brand-logo-nav"
               href="#home"
               onClick={(e) => handleNavClick(e, "#home")}
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-3.5 group"
             >
-              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white text-black font-sans font-bold text-sm tracking-tighter transition-all duration-300 group-hover:bg-zinc-200">
-                J
-                <span className="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-blue-500 rounded-full border-2 border-black"></span>
+              <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F172A] to-[#1E293B] border border-white/10 transition-all duration-300 group-hover:border-blue-500/40 shadow-inner overflow-hidden">
+                {/* Custom Vector Badge matching browser favicon */}
+                <svg className="w-5 h-5 text-white transition-transform duration-500 group-hover:rotate-45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 12 L88 50 L50 88 L12 50 Z" stroke="url(#navG1)" strokeWidth="4" strokeLinejoin="round" fill="none" />
+                  <path d="M50 24 L76 50 L50 76 L24 50 Z" fill="url(#navG2)" />
+                  <circle cx="50" cy="50" r="6" fill="#22d3ee" />
+                  <defs>
+                    <linearGradient id="navG1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3b82f6" />
+                      <stop offset="100%" stopColor="#22d3ee" />
+                    </linearGradient>
+                    <linearGradient id="navG2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(59,130,246,0.5)" />
+                      <stop offset="100%" stopColor="rgba(34,211,238,0.2)" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                {/* Small indicator light */}
+                <span className="absolute bottom-1 right-1 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"></span>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-[0.2em] text-white uppercase transition-colors duration-300 group-hover:text-zinc-200">
+                <span className="text-sm font-bold tracking-[0.22em] text-white uppercase transition-colors duration-300 group-hover:text-blue-400">
                   Jasmine
                 </span>
-                <span className="font-mono text-[8px] tracking-[0.18em] text-zinc-500 uppercase">
+                <span className="font-mono text-[8px] tracking-[0.24em] text-zinc-500 uppercase font-semibold">
                   Advisory
                 </span>
               </div>

@@ -29,10 +29,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           
           {/* Column 1: Brand Info */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-              <span className="text-sm font-bold tracking-wider text-white uppercase">
+          <div className="md:col-span-5 space-y-5">
+            <div className="flex items-center space-x-3 group cursor-pointer">
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-[#0F172A] to-[#1E293B] border border-white/10 shadow-inner">
+                <svg className="w-4 h-4 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 12 L88 50 L50 88 L12 50 Z" stroke="url(#footG1)" strokeWidth="4" strokeLinejoin="round" fill="none" />
+                  <circle cx="50" cy="50" r="8" fill="#22d3ee" />
+                  <defs>
+                    <linearGradient id="footG1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3b82f6" />
+                      <stop offset="100%" stopColor="#22d3ee" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span className="text-sm font-bold tracking-[0.2em] text-white uppercase transition-colors duration-300 group-hover:text-blue-400">
                 Jasmine Advisory
               </span>
             </div>
